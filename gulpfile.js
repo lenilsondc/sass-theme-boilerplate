@@ -39,8 +39,9 @@ gulp.task('sass', function(done) {
 
 
 
-gulp.task('watch', function() {
-    gulp.watch(paths.sass, ['sass', 'server-reload']);
+gulp.task('watch', function () {
+    gulp.watch(paths.sass, ['sass']);
+    gulp.watch('./src/www/**/*', ['server-reload']);
 });
 
 gulp.task('default', ['sass', 'server', 'watch']);
